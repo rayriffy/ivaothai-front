@@ -14,6 +14,26 @@ const StyledBox= styled(Box)`
   top: 0;
   left: 0;
   right: 0;
+  z-index: 99;
+`
+
+const NavBox = styled(Box)`
+  background: transparent;
+  border-radius: 99px;
+  overflow: hidden;
+  transition: 0.6s;
+
+  & > div {
+    color: #fff;
+  }
+
+  &:hover {
+    background: #fff;
+
+    & > div {
+      color: #000;
+    }
+  }
 `
 
 const HeaderComponent: React.FC = () => {
@@ -41,14 +61,16 @@ const HeaderComponent: React.FC = () => {
   return (
     <StyledBox>
       {GATSBY_ENV !== 'production' ? <Dev /> : null}
-      <Flex>
+      <Flex alignItems={`center`}>
         <Box width={70} mx={3} p={2}>
           <Img fluid={data.logo.childImageSharp.fluid} />
         </Box>
         <Box mx={`auto`} />
-        <Box>
+        <Box px={3}>
           <Box>
-            <Text>Home</Text>
+            <NavBox py={2} px={3}>
+              <Text fontWeight={600} color={`white`}>HOME</Text>
+            </NavBox>
           </Box>
         </Box>
       </Flex>

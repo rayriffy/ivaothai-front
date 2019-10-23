@@ -5,6 +5,10 @@ const GlobalComponent = createGlobalStyle`
     background-color: rgb(245, 245, 245);
   }
 
+  body, html, #___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
+  }
+
   a {
     text-decoration: none;
     color: rgb(83, 106, 144);

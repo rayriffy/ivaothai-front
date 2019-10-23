@@ -6,6 +6,9 @@ import Img from 'gatsby-image'
 import { Box, Text } from 'rebass'
 import styled from 'styled-components'
 
+const CoverFooter = styled(Box)`
+`
+
 const NavText = styled(Text)`
   color: rgba(0, 0, 0, 0.25);
 `
@@ -31,7 +34,7 @@ const FooterComponent: React.FC = () => {
   `)
 
   return (
-    <Box pt={4} px={[5, 5, 6, 7]} pb={4}>
+    <CoverFooter pt={4} px={[5, 5, 6, 7]} pb={4}>
       <Box pt={2} pb={2}>
         <Box width={48}>
           <Img fluid={data.logo.childImageSharp.fluid} />
@@ -40,7 +43,7 @@ const FooterComponent: React.FC = () => {
       <Box pt={2} pb={5}>
         <NavText>© {(new Date().getFullYear())} Phumrapee Limpianchop</NavText>
       </Box>
-    </Box>
+    </CoverFooter>
   )
 }
 
