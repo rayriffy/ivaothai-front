@@ -66,13 +66,23 @@ const HeaderComponent: React.FC = () => {
           <Img fluid={data.logo.childImageSharp.fluid} />
         </Box>
         <Box mx={`auto`} />
-        <Box px={3}>
-          <Box>
+        <Flex px={3}>
+          <Box px={2}>
             <NavBox py={2} px={3}>
               <Text fontWeight={600} color={`white`}>HOME</Text>
             </NavBox>
           </Box>
-        </Box>
+          <Box px={2}>
+            <NavBox py={2} px={3}>
+              <Text fontWeight={600} color={`white`}>PILOT</Text>
+            </NavBox>
+          </Box>
+          <Box px={2}>
+            <NavBox py={2} px={3}>
+              <Text fontWeight={600} color={`white`}>ATC</Text>
+            </NavBox>
+          </Box>
+        </Flex>
       </Flex>
     </StyledBox>
   )

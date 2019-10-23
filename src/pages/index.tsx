@@ -67,7 +67,7 @@ const Page: React.FC = props => {
               <Text fontSize={54} fontWeight={700}>IVAO Thailand Divison</Text>
             </Flex>
             <Flex justifyContent={`center`}>
-            <Text fontSize={27}>Operated under IVAO headquarters</Text>
+            <Text fontSize={22}>Operated under IVAO headquarters</Text>
             </Flex>
           </Content>
         </FeaturedCard>
