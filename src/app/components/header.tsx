@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -15,6 +15,9 @@ const StyledBox= styled(Box)`
   left: 0;
   right: 0;
   z-index: 99;
+  transition: 0.4s;
+
+  ${(props: {navBackground: boolean}) => props.navBackground ? `background: #fff;` : `background: transparent;`}
 `
 
 const NavBox = styled(Box)`
@@ -24,14 +27,14 @@ const NavBox = styled(Box)`
   transition: 0.6s;
 
   & > div {
-    color: #fff;
+    color: ${(props: {inverted: boolean}) => props.inverted ? `#000` : `#fff`};
   }
 
   &:hover {
-    background: #fff;
+    background: ${(props: {inverted: boolean}) => props.inverted ? `#000` : `#fff`};
 
     & > div {
-      color: #000;
+      color: ${(props: {inverted: boolean}) => props.inverted ? `#fff` : `#000`};
     }
   }
 `
@@ -58,8 +61,27 @@ const HeaderComponent: React.FC = () => {
     }        
   `)
 
+  const [navBackground, setNavBackground] = useState<boolean>(false)
+  const navRef = useRef<boolean>()
+
+  navRef.current = navBackground
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 70
+      if (navRef.current !== show) {
+        setNavBackground(show)
+      }
+    }
+
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <StyledBox>
+    <StyledBox navBackground={navBackground}>
       {GATSBY_ENV !== 'production' ? <Dev /> : null}
       <Flex alignItems={`center`}>
         <Box width={70} mx={3} p={2}>
@@ -68,17 +90,17 @@ const HeaderComponent: React.FC = () => {
         <Box mx={`auto`} />
         <Flex px={3}>
           <Box px={2}>
-            <NavBox py={2} px={3}>
+            <NavBox py={2} px={3} inverted={navBackground}>
               <Text fontWeight={600} color={`white`}>HOME</Text>
             </NavBox>
           </Box>
           <Box px={2}>
-            <NavBox py={2} px={3}>
+            <NavBox py={2} px={3} inverted={navBackground}>
               <Text fontWeight={600} color={`white`}>PILOT</Text>
             </NavBox>
           </Box>
           <Box px={2}>
-            <NavBox py={2} px={3}>
+            <NavBox py={2} px={3} inverted={navBackground}>
               <Text fontWeight={600} color={`white`}>ATC</Text>
             </NavBox>
           </Box>
