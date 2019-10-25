@@ -12,6 +12,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@types/react-icons": "^3.0.0",
     "babel-plugin-styled-components": "^1.10.6",
     "dayjs": "^1.8.16",
     "gatsby": "^2.17.2",
@@ -36,6 +37,7 @@
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "react-icon": "^1.0.0",
+    "react-icons": "^3.8.0",
     "rebass": "^4.0.6",
     "styled-components": "^4.4.0"
   },

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { FaArrowRight } from 'react-icons/fa'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -46,6 +48,14 @@ const StyledCard = styled(Card)`
   overflow: hidden;
   background: #fff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+`
+
+const StyledFlex = styled(Flex)`
+  justify-content: flex-start;
+
+  @media screen and (min-width: 40em) {
+    justify-content: flex-end;
+  }
 `
 
 const Page: React.FC = props => {
@@ -101,43 +111,58 @@ const Page: React.FC = props => {
         <Flex justifyContent={`center`}>
           <Box width={[22 / 24, 20 / 24, 18 / 24, 16 / 24]}>
             <Box>
-              <Text fontSize={32} fontWeight={700}>Interviews</Text>
+              <Flex flexWrap={`wrap`} alignItems={`center`}>
+                <Box width={[1, 1 / 2]}>
+                  <Text fontSize={32} fontWeight={700}>Interviews</Text>
+                </Box>
+                <Box width={[1, 1 / 2]}>
+                  <StyledFlex>
+                    <Text fontSize={20}>Older interviews</Text>
+                    <Flex alignItems={`center`} pl={1}>
+                      <FaArrowRight size={`20px`} />
+                    </Flex>
+                  </StyledFlex>
+                </Box>
+              </Flex>
             </Box>
             <Box>
               <Flex flexWrap={`wrap`} alignItems={`center`}>
-                <Box width={[1 , 1, 3 / 4]} pt={3}>
-                  <Flex flexWrap={`wrap`} justifyContent={`center`} alignItems={`center`}>
-                    <Box width={[1, 1, 1 / 2]} p={2}>
-                      <RoundImage fluid={data.default.childImageSharp.fluid} />
-                    </Box>
-                    <Box width={[1, 1, 1 / 2]} p={2}>
-                      <Text fontSize={12}>PRIVATE PILOTS</Text>
-                      <Text fontSize={24} fontWeight={500} pb={1}> Phumrapee Limpianchop</Text>
-                      <Text fontSize={18} color={`#616161`} pt={1}>YEET</Text>
-                    </Box>
-                  </Flex>
+                <Box width={[1 , 1, 1 / 2]} pt={3} px={2}>
+                  <Box p={2}>
+                    <RoundImage fluid={data.default.childImageSharp.fluid} />
+                  </Box>
+                  <Box p={2}>
+                    <Text fontSize={12}>PRIVATE PILOTS</Text>
+                    <Text fontSize={24} fontWeight={500} pb={1}> Phumrapee Limpianchop</Text>
+                    <Text fontSize={16} color={`#616161`} pt={1}>แอบมองเธออยู่บนเจ้าคะเจ้าพระยาทนแทบไม่ได้เริ่มกันใหญ่และเธอได้ลบ อย่ารอช้าก้าวออกมาเพื่อก้าวออกไปรับฤดูใหม่ และตอนนี้คงจะมีแค่เพียงเราจะไม่เสียใจ ขอให้เธอรู้ฉันจะได้ไหม ขอให้ชีวิตความฝันนั้นที่พึ่งโยนไปนั้นที่จะบ้า ไม่ว่ารักเธอจะวิ่งตามรถคันนึงที่กำลังได้พบ</Text>
+                    <Text fontSize={14} pt={3}>Read more...</Text>
+                  </Box>
                 </Box>
-                <Box width={[1, 1, 1 / 4]} pt={3}>
+                <Box width={[1, 1, 1 / 2]} pt={3}>
                   <Flex flexWrap={`wrap`} justifyContent={`center`} alignItems={`center`}>
                     <Box width={[1, 1 / 2]} p={2}>
                       <Text fontSize={10}>ADC</Text>
-                      <Text fontSize={22} fontWeight={500} pb={1}>YEET</Text>
-                      <Text fontSize={16} color={`#616161`} pt={1}>YEET</Text>
+                      <Text fontSize={22} fontWeight={500} pb={1}>Kwanphathai Wuttisit</Text>
+                      <Text fontSize={12} color={`#616161`} pt={1}>จะไม่พักหายใจเข้าสู่วันที่ผ่านและพ้นเรื่องราวหมองหม่น ขอแค่พูดออกไปให้ไกลเหมือนหมดแรงก้าวต่อไปให้ฉันนั้นตั้งกี่ครั้ง ก็ไม่รู้ทำไมบังเอิญอย่างนี้แต่เรื่องดี เธอต้องไปวัดพระแก้วเวลาเหล่านั้นก็สุขใจ แต่นานเพียงใดฉันยังนึกเรื่องนี้ขึ้นมา</Text>
+                      <Text fontSize={14} pt={2}>Read more...</Text>
                     </Box>
                     <Box width={[1, 1 / 2]} p={2}>
                       <Text fontSize={10}>SPP</Text>
-                      <Text fontSize={22} fontWeight={500} pb={1}>YEET</Text>
-                      <Text fontSize={16} color={`#616161`} pt={1}>YEET</Text>
+                      <Text fontSize={22} fontWeight={500} pb={1}>Kwanpadthai Wuttisit</Text>
+                      <Text fontSize={12} color={`#616161`} pt={1}>ปล่อยใจไปข้างหน้าอีกไม่ว่าฉันจะมีอยู่ในเวลาที่เดินต่อ จดจำไว้ว่าเธอต้องเข้มแข็งว่างเปล่าน้ำข้ามให้เธอนั้นโชคดีเนื่องในวันนี้ จะได้พบเธอนั้นเฉยเมยจางก้อนหินใต้เท้าปัดมันช่างแสนไกล</Text>
+                      <Text fontSize={14} pt={2}>Read more...</Text>
                     </Box>
                     <Box width={[1, 1 / 2]} p={2}>
                       <Text fontSize={10}>APC</Text>
-                      <Text fontSize={22} fontWeight={500} pb={1}>YEET</Text>
-                      <Text fontSize={16} color={`#616161`} pt={1}>YEET</Text>
+                      <Text fontSize={22} fontWeight={500} pb={1}>Kwanpatai Wuttisit</Text>
+                      <Text fontSize={12} color={`#616161`} pt={1}>อย่าได้หวั่นกลัวเลยกับปัญหาและเธอ ลองไม่ว่าสุดท้ายลงเอยเช่นไรก็มีอยู่ ลองวัดกันดูปฏิทินช่วงเวลาที่ความจริงออกไป ให้หัวใจเธอจะดีเฮอีกทีหรือไปเล่นตะกร้อ จงบอกไปด้วยกันตรงนี้เป็นเพื่อนสักทีที่เดินไป</Text>
+                      <Text fontSize={14} pt={2}>Read more...</Text>
                     </Box>
                     <Box width={[1, 1 / 2]} p={2}>
                       <Text fontSize={10}>ATP</Text>
-                      <Text fontSize={22} fontWeight={500} pb={1}>YEET</Text>
-                      <Text fontSize={16} color={`#616161`} pt={1}>YEET</Text>
+                      <Text fontSize={22} fontWeight={500} pb={1}>Kwanpudding Wuttisit</Text>
+                      <Text fontSize={12} color={`#616161`} pt={1}>ก้าวไปให้ทุกคนที่ไม่มีวันมีไฟในใจแอบคิดอะไร และข้าวมันคือบางกอกเมืองที่เราไม่ได้ตั้งใจ</Text>
+                      <Text fontSize={14} pt={2}>Read more...</Text>
                     </Box>
                   </Flex>
                 </Box>
@@ -150,7 +175,19 @@ const Page: React.FC = props => {
         <Flex justifyContent={`center`}>
           <Box width={[22 / 24, 20 / 24, 18 / 24, 16 / 24]}>
             <Box>
-              <Text fontSize={32} fontWeight={700}>Knowledges</Text>
+              <Flex flexWrap={`wrap`} alignItems={`center`}>
+                <Box width={[1, 1 / 2]}>
+                  <Text fontSize={32} fontWeight={700}>Knowledges</Text>
+                </Box>
+                <Box width={[1, 1 / 2]}>
+                  <StyledFlex>
+                    <Text fontSize={20}>More knowledges</Text>
+                    <Flex alignItems={`center`} pl={1}>
+                      <FaArrowRight size={`20px`} />
+                    </Flex>
+                  </StyledFlex>
+                </Box>
+              </Flex>
             </Box>
             <Box>
               <Flex flexWrap={`wrap`} alignItems={`center`} pt={1}>
@@ -162,7 +199,7 @@ const Page: React.FC = props => {
                     <Box p={3}>
                       <Text fontSize={12}>PILOT</Text>
                       <Text fontSize={24} fontWeight={500} pb={1}>How to fly VFR</Text>
-                      <Text fontSize={18} color={`#616161`} pt={1}>YEET</Text>
+                      <Text fontSize={14} color={`#616161`} pt={1}>อยากจะได้พบกันสักวันที่ฉันฝัน จะข้ามบันไดและค่อยค่อยเป่าทนผู้คนรัว ก็หัวใจเธอเธอนั้นมีแรงกว่าการที่ใจต้องการ</Text>
                     </Box>
                   </StyledCard>
                 </Box>
@@ -174,7 +211,7 @@ const Page: React.FC = props => {
                     <Box p={3}>
                       <Text fontSize={12}>PILOT</Text>
                       <Text fontSize={24} fontWeight={500} pb={1}>How to fly VFR</Text>
-                      <Text fontSize={18} color={`#616161`} pt={1}>YEET</Text>
+                      <Text fontSize={14} color={`#616161`} pt={1}>แม้จะไปเด็ดผลไม้ต้องห้าม มาเถิดเราข้ามมันไปให้เธอจะรักไม่อาจเดาได้ ก็ฝ่ามันก็ต้องมาเลยว่าฉันจะเป็นผู้ใหญ่ แอบส่งใจของฉันเป็นโชว์ของทุกช่วงที่เธอ</Text>
                     </Box>
                   </StyledCard>
                 </Box>
@@ -186,7 +223,7 @@ const Page: React.FC = props => {
                     <Box p={3}>
                       <Text fontSize={12}>PILOT</Text>
                       <Text fontSize={24} fontWeight={500} pb={1}>How to fly VFR</Text>
-                      <Text fontSize={18} color={`#616161`} pt={1}>YEET</Text>
+                      <Text fontSize={14} color={`#616161`} pt={1}>แค่เพียงได้นึกถึงวันเวลาเหล่านั้นก็สุขใจ ถ้าไม่ลองไม่เคยจะไม่เดียวที่เราก้าวเดินออกไป ที่มีในนภาที่รักข้าวยำเป้าหมายปลายทางโดยที่ไม่ได้</Text>
                     </Box>
                   </StyledCard>
                 </Box>
