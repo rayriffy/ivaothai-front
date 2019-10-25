@@ -36,7 +36,7 @@ const FooterComponent: React.FC = () => {
   return (
     <CoverFooter pt={4} px={[5, 5, 6, 7]} pb={4}>
       <Box pt={2} pb={2}>
-        <Box width={48}>
+        <Box width={32}>
           <Img fluid={data.logo.childImageSharp.fluid} />
         </Box>
       </Box>

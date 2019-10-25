@@ -85,7 +85,9 @@ const HeaderComponent: React.FC = () => {
       {GATSBY_ENV !== 'production' ? <Dev /> : null}
       <Flex alignItems={`center`}>
         <Box width={70} mx={3} p={2}>
-          <Img fluid={data.logo.childImageSharp.fluid} />
+          <TransparentLinkComponent to={`/`}>
+            <Img fluid={data.logo.childImageSharp.fluid} />
+          </TransparentLinkComponent>
         </Box>
         <Box mx={`auto`} />
         <Flex px={3}>
