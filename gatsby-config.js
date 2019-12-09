@@ -1,5 +1,3 @@
-const { GATSBY_ENV = 'production', CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } = process.env
-
 module.exports = {
   siteMetadata: {
     title: 'IVAO Thailand Division',
@@ -25,7 +23,7 @@ module.exports = {
         ignore: [`**/.*`],
       },
     },
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-emotion`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

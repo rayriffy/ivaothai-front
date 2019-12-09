@@ -3,8 +3,8 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+import styled from '@emotion/styled'
 import { Box, Text } from 'rebass'
-import styled from 'styled-components'
 
 const CoverFooter = styled(Box)`
 `

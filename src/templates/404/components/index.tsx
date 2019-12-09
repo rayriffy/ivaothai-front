@@ -5,8 +5,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import Img from 'gatsby-image'
 
-import { Box, Card, Flex, Heading, Text } from 'rebass'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
+import { Box, Card, Flex, Text } from 'rebass'
 
 import App from '../../../app/components'
 

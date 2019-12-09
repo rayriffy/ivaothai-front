@@ -5,8 +5,8 @@ import { FaArrowRight } from 'react-icons/fa'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+import styled from '@emotion/styled'
 import { Box, Card, Flex, Text } from 'rebass'
-import styled from 'styled-components'
 
 import App from '../app/components'
 

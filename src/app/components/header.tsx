@@ -3,13 +3,21 @@ import React, { useEffect, useRef, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+import styled from '@emotion/styled'
 import { Box, Flex, Text } from 'rebass'
-import styled from 'styled-components'
 
 import TransparentLinkComponent from '../../core/components/transparentLink'
 import Dev from './dev'
 
-const StyledBox= styled(Box)`
+interface IStyledBox {
+  navBackground: boolean
+}
+
+interface INavBox {
+  inverted: boolean
+}
+
+const StyledBox= styled(Box)<IStyledBox>`
   position: fixed;
   top: 0;
   left: 0;
@@ -17,24 +25,24 @@ const StyledBox= styled(Box)`
   z-index: 99;
   transition: 0.4s;
 
-  ${(props: {navBackground: boolean}) => props.navBackground ? `background: #fff;` : `background: transparent;`}
+  ${(props: IStyledBox) => props.navBackground ? `background: #fff;` : `background: transparent;`}
 `
 
-const NavBox = styled(Box)`
+const NavBox = styled(Box)<INavBox>`
   background: transparent;
   border-radius: 99px;
   overflow: hidden;
   transition: 0.6s;
 
   & > div {
-    color: ${(props: {inverted: boolean}) => props.inverted ? `#000` : `#fff`};
+    color: ${(props: INavBox) => props.inverted ? `#000` : `#fff`};
   }
 
   &:hover {
-    background: ${(props: {inverted: boolean}) => props.inverted ? `#000` : `#fff`};
+    background: ${(props: INavBox) => props.inverted ? `#000` : `#fff`};
 
     & > div {
-      color: ${(props: {inverted: boolean}) => props.inverted ? `#fff` : `#000`};
+      color: ${(props: INavBox) => props.inverted ? `#fff` : `#000`};
     }
   }
 `

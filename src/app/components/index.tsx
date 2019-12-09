@@ -1,7 +1,7 @@
 import React from 'react'
 
+import styled from '@emotion/styled'
 import { Box } from 'rebass'
-import styled from 'styled-components'
 
 import Footer from './footer'
 import Global from './global'
